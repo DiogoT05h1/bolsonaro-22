@@ -57,15 +57,14 @@ function jogaNovamente(){
         mostraPergunta();
 }
 function mostraResultado() {
-    caixaPerguntas.textContent = "Em 2049...";
-    textoResultado.textContent historiaFinal;
-    caixaAlternativas.textContent = "";
-    caixaResultado.classList.add("mostrar");
-    botaoJogarNovamente.addEventListener("click", jogaNovamente());
+caixaPerguntas.textContent = "Em 2049...";
+textoResultado.textContent = historiaFinal;
+caixaAlternativas.textContent = "";
+caixaResultado.classList.add("mostrar"); botaoJogarNovamente.addEventListener("click", jogaNovamente());
 }
-function jogaNovamente(){
-    atual = 0;
-    historiaFinal = "";
-    caixaResultado.classList.remove("mostrar");
-    mostraPergunta();
+function jogaNovamente() {
+atual = 0;
+historiaFinal = "";
+caixaResultado.classList.remove("mostrar");
+mostraPergunta();
 }
