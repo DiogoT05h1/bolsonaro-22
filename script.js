@@ -57,7 +57,7 @@ function jogaNovamente(){
         mostraPergunta();
 }
 function mostraResultado() {
-caixaPerguntas.textContent = "Em 2049...";
+caixaPerguntas.textContent = `Em 2049, ${nome}`;
 textoResultado.textContent = historiaFinal;
 caixaAlternativas.textContent = "";
 caixaResultado.classList.add("mostrar"); botaoJogarNovamente.addEventListener("click", jogaNovamente());
@@ -67,4 +67,10 @@ atual = 0;
 historiaFinal = "";
 caixaResultado.classList.remove("mostrar");
 mostraPergunta();
+}
+import {aleatorio, nome} from './aleatorio.js';
+function substituiNome(){
+    for(const pergunta of perguntas){
+        pergunta.enunciado = pergunta.enunciado.replace(/você/g, nome);
+    }
 }
