@@ -44,11 +44,16 @@ function aleatorio (lista){
         const posicao = Math.floor(Math.random()* lista.length);
         return lista[posicao];
 }
-function respostaSelecionada(opcaoSelecionada){
-        const afirmacoes = aleatorio(opcaoSelecionada.afirmacao);
-        historiaFinal += afirmacoes + " ";
-        atual++;
-        mostraPergunta();
+function respostaSelecionada(opcaoSelecionada) {
+    const afirmacoes = aleatorio(opcaoSelecionada.afirmacao);
+    historiaFinal += afirmacoes + " ";
+    if (opcaoSelecionada.proxima != undefined) {
+        atual = opcaoSelecionada.proxima;
+    } else {
+        mostraResultado();
+        return;
+    }
+    mostraPergunta();
 }
 const botaoJogarNovamente = document.querySelector(".novamente-btn");
 function jogaNovamente(){
